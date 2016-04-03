@@ -24,7 +24,7 @@ pip3 install hug_peewee --upgrade
 Ideally, within a virtual environment.
 
 
-Why hug_peewee?
+What is hug_peewee?
 ===================
 
 An extension to hug that adds clean integration with the peewee ORM

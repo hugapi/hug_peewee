@@ -19,3 +19,13 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 OTHER DEALINGS IN THE SOFTWARE.
 
 """
+
+
+@hug.request_middleware()
+def process_data(request, response):
+    db.connect()
+
+
+@hug.response_middleware()
+def process_data(request, response, resource):
+    db.disconnect()

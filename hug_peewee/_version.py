@@ -1,6 +1,6 @@
-"""hug_peewee/__init__.py
+"""hug_peewee/_version.py
 
-An extension to hug that adds clean integration with the peewee ORM
+Stores the current version information in a commonly accessible module
 
 Copyright (C) 2016  Timothy Edmund Crosley
 
@@ -19,6 +19,4 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 OTHER DEALINGS IN THE SOFTWARE.
 
 """
-from hug_peewee._version import current
-
-__version__ = current
+current = "0.0.1"

@@ -25,5 +25,5 @@ import hug_peewee
 
 
 def test_hug_peewee():
-    '''Test to ensure hug_peewee works as expected'''
+    """Test to ensure hug_peewee works as expected"""
     assert hug_peewee

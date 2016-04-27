@@ -1,7 +1,7 @@
 import peewee
 from peewee import *
 
-def connect(database='SqlliteDatabse', location=':memory:', **settings):
+def connect(database='SqliteDatabse', location=':memory:', **settings):
     try:
         database_class = load_class(database_config)
         assert issubclass(database_class, database)

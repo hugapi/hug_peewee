@@ -1,4 +1,4 @@
-'''Defines how connections with databases via peewee will be handled'''
+"""Defines how connections with databases via peewee will be handled"""
 import hug
 from peewee import MySQLDatabase, PostgresqlDatabase, SqliteDatabase
 from playhouse.berkeleydb import BerkeleyDatabase

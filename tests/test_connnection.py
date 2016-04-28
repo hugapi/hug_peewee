@@ -19,3 +19,5 @@ def test_manage():
     assert isinstance(hug_peewee.connection.manage(api, location='connection_testing.db'), SqliteDatabase)
     assert hug.test.get(api, 'fake_endpoint').data == True
 
+    with pytest.raises(ValueError):
+        hug_peewee.connection.manage(api, engine="Reese's Petabyte Cup") # I also wish this existed!

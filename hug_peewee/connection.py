@@ -21,6 +21,6 @@ def manage(api, engine='sqlite', location=':memory:', **settings):
 
         @hug.response_middleware(api=hug_api)
         def process_data(request, response, resource):
-            engine_instance.disconnect()
+            engine_instance.close()
 
     return engine_instance

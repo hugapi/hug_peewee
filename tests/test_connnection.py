@@ -8,7 +8,14 @@ import hug_peewee
 api = hug.API(__name__)
 
 
+@hug.get()
+def fake_endpoint():
+    return True
+
+
 def test_manage():
     """Test to ensure telling hug_peewee to manage connections works as expected"""
     assert isinstance(hug_peewee.connection.manage(api), SqliteDatabase)
     assert isinstance(hug_peewee.connection.manage(api, location='here'), SqliteDatabase)
+    assert hug.test.get(api, 'fake_endpoint').data == True
+

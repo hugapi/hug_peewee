@@ -1,4 +1,4 @@
-![hug_peewee](https://raw.github.com/timothycrosley/hug_peewee/develop/artwork/logo.png)
+hug_peewee
 ===================
 
 [![PyPI version](https://badge.fury.io/py/hug_peewee.svg)](http://badge.fury.io/py/hug_peewee)
@@ -7,10 +7,15 @@
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/hug_peewee/)
 [![Join the chat at https://gitter.im/timothycrosley/hug_peewee](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/timothycrosley/hug_peewee?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-An extension to hug that adds clean integration with the peewee ORM
+An extension to hug that adds clean integration with the peewee ORM:
 
-[![hug_peewee Example](https://raw.github.com/timothycrosley/hug_peewee/develop/artwork/example.gif)](https://github.com/timothycrosley/hug_peewee/blob/develop/examples/example.py)
+```py
+import hug_peewee
 
+db = hug_peewee.connection.manage(__name__, 'sqlite', 'my.db')
+```
+
+Works with hug 2.1.0 or greater.
 
 Installing hug_peewee
 ===================

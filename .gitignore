@@ -69,3 +69,6 @@ venv/
 
 # Cython
 *.c
+
+# Testing artifacts
+connection_testing.db

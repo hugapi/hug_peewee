@@ -20,5 +20,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 """
 from hug_peewee._version import current
+from hug_peewee.connection import ENGINES
 
 __version__ = current

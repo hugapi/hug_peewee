@@ -1,6 +1,6 @@
 """Defines how connections with databases via peewee will be handled"""
 import hug
-from peewee import MySQLDatabase, PostgresqlDatabase, SqliteDatabase
+from peewee import MySQLDatabase, PostgresqlDatabase, SqliteDatabase, Model
 from playhouse.berkeleydb import BerkeleyDatabase
 
 ENGINES = {'sqlite': SqliteDatabase, 'psql': PostgresqlDatabase, 'mysql': MySQLDatabase, 'berkeley': BerkeleyDatabase}
@@ -23,4 +23,9 @@ def manage(api, engine='sqlite', location=':memory:', **settings):
         def process_data(request, response, resource):
             engine_instance.close()
 
+    class DatabaseModel(Model):
+        class Meta:
+            database = engine_instance
+
+    engine_instance.model = DatabaseModel
     return engine_instance

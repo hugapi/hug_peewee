@@ -69,11 +69,6 @@ setup(name='hug_peewee',
       author_email='timothy.crosley@gmail.com',
       url='https://github.com/timothycrosley/hug_peewee',
       license="MIT",
-      # entry_points={
-      #  'console_scripts': [
-      #      'hug_peewee = hug_peewee:run.terminal',
-      #  ]
-      #},
       packages=['hug_peewee'],
       requires=['hug', 'peewee'],
       install_requires=['hug', 'peewee'],

@@ -2,6 +2,7 @@
 import hug
 from peewee import MySQLDatabase, PostgresqlDatabase, SqliteDatabase, Model
 from playhouse.berkeleydb import BerkeleyDatabase
+from playhouse.shortcuts import model_to_dict
 
 ENGINES = {'sqlite': SqliteDatabase, 'psql': PostgresqlDatabase, 'mysql': MySQLDatabase, 'berkeley': BerkeleyDatabase}
 
@@ -26,6 +27,9 @@ def manage(api, engine='sqlite', location=':memory:', **settings):
     class DatabaseModel(Model):
         class Meta:
             database = engine_instance
+
+        def __native_types__(self):
+            model_to_dict(self)
 
     engine_instance.model = DatabaseModel
     return engine_instance

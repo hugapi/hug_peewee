@@ -31,5 +31,15 @@ def manage(api, engine='sqlite', location=':memory:', **settings):
         def __native_types__(self):
             model_to_dict(self)
 
+        @classmethod
+        def row(cls, primary_key='id'):
+            def get_item(id):
+                if isinstance(id, cls):
+                    return id
+
+                return cls.get(getattr(cls, primary_key)==id)
+            get_item.__doc__ = 'A {} retrieved based on unique {}'.format(cls.__name__, primary_key)
+            return get_item
+
     engine_instance.model = DatabaseModel
     return engine_instance

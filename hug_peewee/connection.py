@@ -41,5 +41,5 @@ def manage(api, engine='sqlite', location=':memory:', **settings):
             get_item.__doc__ = 'A {} retrieved based on unique {}'.format(cls.__name__, primary_key)
             return get_item
 
-    engine_instance.model = DatabaseModel
+    engine_instance.Model = DatabaseModel
     return engine_instance

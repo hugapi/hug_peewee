@@ -29,7 +29,7 @@ def manage(api, engine='sqlite', location=':memory:', **settings):
             database = engine_instance
 
         def __native_types__(self):
-            model_to_dict(self)
+            return model_to_dict(self)
 
         @classmethod
         def row(cls, primary_key='id'):

@@ -62,7 +62,7 @@ except (IOError, ImportError, OSError, RuntimeError):
    readme = ''
 
 setup(name='hug_peewee',
-      version='0.0.1',
+      version='0.0.2',
       description='An extension to hug that adds clean integration with the peewee ORM',
       long_description=readme,
       author='Timothy Crosley',
